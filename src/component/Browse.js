@@ -1,11 +1,14 @@
 import React, { useRef } from "react";
-
+import Header from "./Header";
+import SideBar from "./SideBar";
+import { useSelector } from "react-redux";
 const Browse = () => {
-  const btn = useRef(null);
-  console.log(btn);
+  const isMenuOpen = useSelector((store) => store.toggle.isMenuOpen);
+
   return (
     <div>
-      <button ref={btn}>Browse</button>
+      <Header />
+      {isMenuOpen ? <SideBar /> : null}
     </div>
   );
 };
