@@ -1,10 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
-
+import Body from "../src/component/Body";
+import { Provider } from "react-redux";
+import appStore from "./utils/userStore";
 function App() {
   return (
     <div className="App">
-      <a>Learn React</a>
+      <Provider store={appStore}>
+        <Body />
+      </Provider>
     </div>
   );
 }
