@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaMusic,
   FaShoppingBag,
@@ -16,47 +16,49 @@ import {
   FaQuestionCircle,
   FaComment,
 } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { searchQuerry } from "../utils/useSearchSlice";
+import { Link, useNavigate } from "react-router-dom";
 const SideBar = () => {
+  const [querry, setQuerry] = useState();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  function handler(event) {
+    const buttonLabel = event.target.innerText.trim();
+    setQuerry(buttonLabel);
+    dispatch(searchQuerry(buttonLabel));
+    navigate(`/browse/result?v=${buttonLabel}`);
+  }
+
+  const data = [
+    { icon: <FaFire />, label: "Trending" },
+    { icon: <FaShoppingBag />, label: "Shopping" },
+    { icon: <FaMusic />, label: "Music" },
+    { icon: <FaFilm />, label: "Films" },
+    { icon: <FaBroadcastTower />, label: "Live" },
+    { icon: <FaGamepad />, label: "Gaming" },
+    { icon: <FaNewspaper />, label: "News" },
+    { icon: <FaRunning />, label: "Sport" },
+    { icon: <FaBook />, label: "Learning" },
+    { icon: <FaHeadphones />, label: "Music" },
+    { icon: <FaTshirt />, label: "Fashion" },
+  ];
   return (
-    <div className="lg:w-1/6 bg-black  text-gray-300 p-2 w-1/2 text-lg">
+    <div className=" bg-black  text-gray-300 p-2 lg:w-[15%]  w-1/2  text-lg absolute z-10 lg:relative">
       <div>
-        <ul className="p-4 list-disc">
-          <p className=" my-4 text-white font-medium text-xl">Explore</p>
-          <li className="flex items-center py-2">
-            <FaFire className="mr-4" /> Trending
-          </li>
-          <li className="flex items-center py-2">
-            <FaShoppingBag className="mr-4" /> Shopping
-          </li>
-          <li className="flex items-center py-2">
-            <FaMusic className="mr-4" /> Music
-          </li>
-          <li className="flex items-center py-2">
-            <FaFilm className="mr-4" /> Films
-          </li>
-          <li className="flex items-center py-2">
-            <FaBroadcastTower className="mr-4" /> Live
-          </li>
-          <li className="flex items-center py-2">
-            <FaGamepad className="mr-4" /> Gaming
-          </li>
-          <li className="flex items-center py-2">
-            <FaNewspaper className="mr-4" /> News
-          </li>
-          <li className="flex items-center py-2">
-            <FaRunning className="mr-4" /> Sport
-          </li>
-          <li className="flex items-center py-2">
-            <FaBook className="mr-4" /> Learning
-          </li>
-          <li className="flex items-center py-2">
-            <FaHeadphones className="mr-4" /> Music
-          </li>
-          <li className="flex items-center py-2">
-            <FaTshirt className="mr-4" /> Fashion
-          </li>
-        </ul>
+        {data.map((m, index) => (
+          <button
+            className="flex items-center py-2"
+            onClick={handler}
+            key={index}
+          >
+            {m.icon && React.cloneElement(m.icon, { className: "mr-4" })}
+            {m.label}
+          </button>
+        ))}
       </div>
+
       <hr />
       <div className=" my-4">
         <ul>
