@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 .loader {
   width: 48px;
   height: 48px;
@@ -19,4 +20,16 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.logo-text {
+  font-family: "Permanent Marker", cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner {
+  background-image: url("/src/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

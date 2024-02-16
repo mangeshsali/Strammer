@@ -25,7 +25,7 @@ const SideBar = () => {
   const navigate = useNavigate();
 
   function handler(event) {
-    const buttonLabel = event.target.innerText.trim();
+    const buttonLabel = event.target.innerText;
     setQuerry(buttonLabel);
     dispatch(searchQuerry(buttonLabel));
     navigate(`/browse/result?v=${buttonLabel}`);
@@ -45,7 +45,7 @@ const SideBar = () => {
     { icon: <FaTshirt />, label: "Fashion" },
   ];
   return (
-    <div className=" bg-black  text-gray-300 p-2 lg:w-[15%]  w-1/2  text-lg absolute z-10 lg:relative">
+    <div className=" bg-black  text-gray-300 p-2 lg:w-[15%]  w-1/2  text-lg absolute z-10 lg:relative lg:h-[50%] border-r">
       <div>
         {data.map((m, index) => (
           <button

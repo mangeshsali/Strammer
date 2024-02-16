@@ -11,7 +11,7 @@ const Browse = () => {
   return (
     <div>
       <Header />
-      <div className="flex">
+      <div className="flex  lg:fixed w-[100%]">
         {isMenuOpen && <SideBar />}
 
         {/* <VideoContainer />

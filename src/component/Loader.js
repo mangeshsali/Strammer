@@ -1,5 +1,5 @@
 import React from "react";
-
+import { ShimmerSimpleGallery } from "react-shimmer-effects";
 const Loader = () => {
   return (
     <>
@@ -7,6 +7,7 @@ const Loader = () => {
         <span className="loader"></span>
         <div className="m-3 text-3xl">Loading</div>
       </div>
+      {/* <ShimmerSimpleGallery card imageHeight={250} caption />; */}
     </>
   );
 };
