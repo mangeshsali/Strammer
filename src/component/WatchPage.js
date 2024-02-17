@@ -44,10 +44,10 @@ const WatchPage = () => {
   return (video ?? []).length === 0 ? (
     <Loader />
   ) : (
-    <div className="w-[100%] flex  lg:overflow-y-scroll h-screen ">
-      <div className="m-6 w-[66%] ">
+    <div className="w-[100%] flex  lg:overflow-y-scroll h-screen">
+      <div className="lg:m-6 lg:w-[66%] w-[100%] ">
         <div className=" flex ">
-          <div className=" lg:mt-0 mt-10">
+          <div className=" lg:mt-0 mt-14 w-full">
             <iframe
               // width="880"
               // height="515"
@@ -55,7 +55,7 @@ const WatchPage = () => {
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
-              className="rounded-xl lg:w-[880px] lg:h-[515px] w-[400px] h-[350px] "
+              className="rounded-xl lg:w-[880px] lg:h-[515px] w-[100%] h-[350px] "
             ></iframe>
           </div>
         </div>

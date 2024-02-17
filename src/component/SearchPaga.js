@@ -27,7 +27,7 @@ const SearchPaga = () => {
   return result.length === 0 ? (
     <Loader />
   ) : (
-    <div className="mx-auto  w-[60%] lg:mt-0 mt-1 h-screen overflow-y-scroll">
+    <div className="mx-auto  lg:w-[60%] w-[100%] lg:mt-0 mt-14 h-screen overflow-y-scroll">
       {result.map((r, index) => (
         <Link to={"/browse/watch?v=" + r?.id?.videoId}>
           <SearchCards key={index} info={r} />

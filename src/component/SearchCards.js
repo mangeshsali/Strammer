@@ -20,7 +20,7 @@ const SearchCards = ({ info }) => {
   const timeAgo = formatDistanceToNow(providedDate, { addSuffix: true });
 
   return (
-    <div className="flex flex-col md:flex-row  my-2 lg:mt-2 mt-14 bg-gray-100 rounded-xl p-4   shadow-xl cursor-pointer hover:bg-gray-200">
+    <div className="flex flex-col md:flex-row  my-2 lg:mt-2 mt-0 bg-gray-100 rounded-xl p-4   shadow-xl cursor-pointer hover:bg-gray-200 lg:m-0 m-2">
       <div className="md:w-1/4 md:mr-4 mb-4 md:mb-0 lg:w-[10rem] flex justify-center items-center">
         <img
           src={thumbnails.high?.url}

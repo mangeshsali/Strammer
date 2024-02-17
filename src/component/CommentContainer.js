@@ -22,7 +22,7 @@ const CommentContainer = () => {
     return <div>No information available</div>;
   }
   return (
-    <div className="p-2 bg-slate-100 rounded-xl w-[120%] lg:w-[100%]">
+    <div className="p-2 bg-slate-100 rounded-xl w-[100%] lg:w-[100%] ">
       <h1 className="text-2xl font-bold m-4">
         {commentsData.length > 0
           ? `${commentsData.length} Comments`
