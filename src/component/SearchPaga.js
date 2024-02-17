@@ -19,7 +19,6 @@ const SearchPaga = () => {
     const data = await fetch(SEARCH_API + "&q=" + selector);
     const json = await data.json();
     setResult(json.items); // Set result to the array of items
-
   }
 
   if (!result) {
@@ -28,7 +27,7 @@ const SearchPaga = () => {
   return result.length === 0 ? (
     <Loader />
   ) : (
-    <div className="mx-auto  w-[60%] lg:mt-0 mt-1">
+    <div className="mx-auto  w-[60%] lg:mt-0 mt-1 h-screen overflow-y-scroll">
       {result.map((r, index) => (
         <Link to={"/browse/watch?v=" + r?.id?.videoId}>
           <SearchCards key={index} info={r} />

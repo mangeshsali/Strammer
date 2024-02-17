@@ -51,7 +51,7 @@ const WatchPage = () => {
             <iframe
               // width="880"
               // height="515"
-              src={"https://www.youtube.com/embed/" + params}
+              src={"https://www.youtube.com/embed/" + params + "?autoplay=1"}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen

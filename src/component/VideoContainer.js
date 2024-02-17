@@ -16,7 +16,7 @@ const VideoContainer = () => {
     setVideos(json.items);
   }
   return (
-    <div className="flex flex-wrap absolute z-0 pl-[10%] lg:pl-0 lg:relative w-[100%] lg:mt-0 mt-14 ">
+    <div className="flex flex-wrap absolute z-0 pl-[10%] lg:pl-0 lg:relative w-[100%] lg:mt-0 mt-14 h-screen overflow-y-scroll">
       {(videos ?? []).length === 0 ? (
         <Loader />
       ) : (

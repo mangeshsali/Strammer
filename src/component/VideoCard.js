@@ -19,7 +19,7 @@ const VideoCard = ({ info }) => {
   const viewCount = statistics.viewCount || 0;
   const formattedViewCount = formatCount(viewCount);
   return (
-    <div className="rounded-xl border w-[300px] h-[350px] m-2  shadow-lg p-2 hover:shadow-xl transition duration-500 transform hover:scale-105">
+    <div className="rounded-xl border w-[300px] h-[350px] m-2  shadow-lg p-2 hover:shadow-xl transition duration-500 transform hover:scale-105 hover:bg-slate-200">
       <div className=" rounded-xl">
         <img
           src={thumbnails.high?.url}
