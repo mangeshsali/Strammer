@@ -3,6 +3,7 @@ import { YOUTUBE_API } from "../utils/config";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import SearchLoader from "./SearchLoader";
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
@@ -18,7 +19,7 @@ const VideoContainer = () => {
   return (
     <div className="flex flex-wrap absolute z-0 pl-[10%] lg:pl-0 lg:relative w-[100%] lg:mt-0 mt-14 h-screen overflow-y-scroll">
       {(videos ?? []).length === 0 ? (
-        <Loader />
+        <SearchLoader />
       ) : (
         videos &&
         videos.map((video, index) => (

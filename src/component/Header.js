@@ -123,7 +123,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search"
-            className="border border-gray-300  mr-2 rounded-lg w-full "
+            className="border border-gray-300  mr-2 rounded-lg w-full"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             ref={inputRef}
